@@ -27,6 +27,7 @@
         </header>
         <div id="wrapper">
             <?php
+            include "includes.php";
             /**
              * Etape 1: Le mur concerne un utilisateur en particulier
              * La première étape est donc de trouver quel est l'id de l'utilisateur
@@ -36,13 +37,6 @@
              */
             $userId =intval($_GET['user_id']);
             ?>
-            <?php
-            /**
-             * Etape 2: se connecter à la base de donnée
-             */
-            $mysqli = new mysqli("localhost", "root", "root", "socialnetwork");
-            ?>
-
             <aside>
                 <?php
                 /**

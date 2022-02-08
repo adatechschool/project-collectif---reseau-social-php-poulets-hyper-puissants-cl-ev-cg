@@ -27,6 +27,7 @@
         </header>
         <div id="wrapper">
             <?php
+            include "includes.php";
             /**
              * Cette page est TRES similaire à wall.php. 
              * Vous avez sensiblement à y faire la meme chose.
@@ -37,12 +38,7 @@
              */
             $userId = intval($_GET['user_id']);
             ?>
-            <?php
-            /**
-             * Etape 2: se connecter à la base de donnée
-             */
-            $mysqli = new mysqli("localhost", "root", "root", "socialnetwork");
-            ?>
+            
 
             <aside>
                 <?php

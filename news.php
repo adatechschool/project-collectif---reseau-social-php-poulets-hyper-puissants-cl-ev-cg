@@ -56,6 +56,7 @@
                 </article>               
 
                 <?php
+                include "includes.php";
                 /*
                   // C'est ici que le travail PHP commence
                   // Votre mission si vous l'acceptez est de chercher dans la base
@@ -65,8 +66,7 @@
                   // plus généralement : https://www.php.net/manual/fr/mysqli.query.php
                  */
 
-                // Etape 1: Ouvrir une connexion avec la base de donnée.
-                $mysqli = new mysqli("localhost", "root", "root", "socialnetwork");
+                
                 //verification
                 if ($mysqli->connect_errno)
                 {
@@ -106,7 +106,7 @@
                 }
 
                 // Etape 3: Parcourir ces données et les ranger bien comme il faut dans du html
-                // NB: à chaque tour du while, la variable post ci dessous reçois les informations du post suivant.
+                // NB: à chaque tour du while, la variable post ci dessous reçoit les informations du post suivant.
                 while ($post = $lesInformations->fetch_assoc())
                 {
                     //la ligne ci-dessous doit etre supprimée mais regardez ce 

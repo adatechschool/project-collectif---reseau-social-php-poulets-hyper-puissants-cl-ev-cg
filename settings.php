@@ -39,6 +39,7 @@
             </aside>
             <main>
                 <?php
+                include "includes.php";
                 /**
                  * Etape 1: Les paramètres concernent une utilisatrice en particulier
                  * La première étape est donc de trouver quel est l'id de l'utilisatrice
@@ -47,11 +48,6 @@
                  * ... mais en résumé c'est une manière de passer des informations à la page en ajoutant des choses dans l'url
                  */
                 $userId = intval($_GET['user_id']);
-
-                /**
-                 * Etape 2: se connecter à la base de donnée
-                 */
-                $mysqli = new mysqli("localhost", "root", "root", "socialnetwork");
 
                 /**
                  * Etape 3: récupérer le nom de l'utilisateur
