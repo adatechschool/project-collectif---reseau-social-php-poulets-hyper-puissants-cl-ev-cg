@@ -83,7 +83,8 @@
                 $laQuestionEnSql = "
                     SELECT posts.content,
                     posts.created,
-                    users.alias as author_name,  
+                    users.alias as author_name,
+                    posts.user_id,
                     count(likes.id) as like_number,  
                     GROUP_CONCAT(DISTINCT tags.label) AS taglist 
                     FROM posts
@@ -111,8 +112,7 @@
                 {
                     //la ligne ci-dessous doit etre supprimée mais regardez ce 
                     //qu'elle affiche avant pour comprendre comment sont organisées les information dans votre 
-                   /*  echo "<pre>" . print_r($post, 1) . "</pre>";
- */
+                    //echo "<pre>" . print_r($post, 1) . "</pre>";
                     // @todo : Votre mission c'est de remplacer les AREMPLACER par les bonnes valeurs
                     // ci-dessous par les bonnes valeurs cachées dans la variable $post 
                     // on vous met le pied à l'étrier avec created
@@ -123,7 +123,7 @@
                         <h3>
                             <time><?php echo $post['created'] ?></time>
                         </h3>
-                        <address><a href=""><?php echo $post['author_name'] ?></a></address>
+                        <address><a href=<?php $userID = $post['user_id']; echo "'wall.php?user_id=$userID'" ?> ><?php echo $post['author_name'] ?></a></address>
                         <div>
                             <p><?php echo $post['content'] ?></p>
                         </div>
