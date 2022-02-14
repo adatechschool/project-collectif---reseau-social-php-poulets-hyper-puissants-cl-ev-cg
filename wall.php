@@ -57,16 +57,95 @@
                 <img src="user.jpg" alt="Portrait de l'utilisatrice"/>
                 <section>
                     <h3>Présentation</h3>
-                    <p>Sur cette page vous trouverez tous les message de l'utilisatrice : <?php echo $user['alias'] ?>
+                    <p>Sur cette page vous trouverez tous les messages de l'utilisatrice : <?php echo $user['alias'] ?>
                     </p>
                 </section>
             </aside>
             <div> 
             <?php 
             if ($userId == $connected_id) {
-                $commentaire_wall = "<form action='wall.php' method='post'><input type='hidden' name='???' value='achanger'><dl><dt><label for='message'>Message</label></dt><dd><textarea name='message'></textarea></dd></dl> <input type='submit'></form>";
+                $commentaire_wall = <<<END
+                <form action='wall.php' method='post'>
+                <input type='hidden' name='???' value='achanger'>
+                <dl><dt><label for='content'>Message</label></dt><dd>
+                <input type='textarea' name='content'></dd></dl>
+                <input type='submit'>
+                </form>
+                END;
             echo $commentaire_wall;            
             }
+            else {
+            $subscription = <<<END
+            <form action='wall.php' method='post'>
+            <input type='hidden' name='user_id' value='${userId}'>
+            <input type='hidden' name='connected_user' value='${connected_id}'>
+            <label for='subscription'>
+            <input type='submit' name='subscription' value="S'abonner">
+            </form>
+            END;
+            echo $subscription;
+            }
+           
+            
+            $enCoursDeTraitement2 = isset($_POST['subscription']);
+                    if ($enCoursDeTraitement2)
+                    {
+                        echo "<pre>" . print_r($_POST, 1) . "</pre>", "turtle";
+                        $followed_id = intval($mysqli->real_escape_string($_POST['user_id']));
+                        $follower_id = $mysqli->real_escape_string($connected_id);
+                        $lInstructionSql2 = "INSERT INTO followers"
+                                . "(id, followed_user_id, following_user_id)"
+                                . "VALUES (NULL, "
+                                . $followed_id . ", "
+                                . $follower_id . "); "
+                                ;
+                        echo $lInstructionSql2;
+                        $ok = $mysqli->query($lInstructionSql2);
+                        if ( ! $ok)
+                        {
+                            echo "Impossible de vous connecter : " . $mysqli->error;
+                        } else
+                        {
+                            echo "Vous êtes connecté.e à :" . $followed_id;
+                        } 
+                    }
+            $enCoursDeTraitement = isset($_POST['content']);
+                    if ($enCoursDeTraitement)
+                    {
+                        // on ne fait ce qui suit que si un formulaire a été soumis.
+                        // Etape 2: récupérer ce qu'il y a dans le formulaire @todo: c'est là que votre travaille se situe
+                        // observez le résultat de cette ligne de débug (vous l'effacerez ensuite)
+                        // echo "<pre>" . print_r($_POST, 1) . "</pre>";
+                        // et complétez le code ci dessous en remplaçant les ???
+                        $authorId = $connected_id;
+                        $postContent = $_POST['content'];
+
+
+                        //Etape 3 : Petite sécurité
+                        // pour éviter les injection sql : https://www.w3schools.com/sql/sql_injection.asp
+                        $authorId = intval($mysqli->real_escape_string($authorId));
+                        $postContent = $mysqli->real_escape_string($postContent);
+                        //Etape 4 : construction de la requete
+                        $lInstructionSql = "INSERT INTO posts "
+                                . "(id, user_id, content, created, parent_id) "
+                                . "VALUES (NULL, "
+                                . $authorId . ", "
+                                . "'" . $postContent . "', "
+                                . "NOW(), "
+                                . "NULL);"
+                                ;
+                        echo $lInstructionSql;
+                        // Etape 5 : execution
+                        $ok = $mysqli->query($lInstructionSql);
+                        if ( ! $ok)
+                        {
+                            echo "Impossible d'ajouter le message: " . $mysqli->error;
+                        } else
+                        {
+                            echo "Message posté en tant que :" . $listAuteurs[$authorId];
+                        } 
+                    } 
+
             ?>
             </div>
             <main>
@@ -98,7 +177,7 @@
                 while ($post = $lesInformations->fetch_assoc())
                 {
 
-                    /* echo "<pre>" . print_r($post, 1) . "</pre>"; */
+                    //  echo "<pre>" . print_r($post, 1) . "</pre>"; 
                     ?>                
                     <article>
                         <h3>
