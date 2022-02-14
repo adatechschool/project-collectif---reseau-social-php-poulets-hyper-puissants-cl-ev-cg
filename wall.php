@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="fr">
     <head>
@@ -7,7 +8,8 @@
         <link rel="stylesheet" href="style.css"/>
     </head>
     <body>
-        <header>
+        <?php include "header.php";?>
+        <!-- <header>
             <img src="resoc.jpg" alt="Logo de notre réseau social"/>
             <nav id="menu">
                 <a href="news.php">Actualités</a>
@@ -24,10 +26,12 @@
                 </ul>
 
             </nav>
-        </header>
-        <div id="wrapper">
+        </header> -->
+        <div id="wrapper">        
+
             <?php
             include "includes.php";
+            
             /**
              * Etape 1: Le mur concerne un utilisateur en particulier
              * La première étape est donc de trouver quel est l'id de l'utilisateur
@@ -35,8 +39,10 @@
              * Documentation : https://www.php.net/manual/fr/reserved.variables.get.php
              * ... mais en résumé c'est une manière de passer des informations à la page en ajoutant des choses dans l'url
              */
-            $userId =intval($_GET['user_id']);
+            $userId = intval($_GET['user_id']);
+            
             ?>
+            
             <aside>
                 <?php
                 /**
@@ -55,6 +61,14 @@
                     </p>
                 </section>
             </aside>
+            <div> 
+            <?php 
+            if ($userId == $connected_id) {
+                $commentaire_wall = "<form action='wall.php' method='post'><input type='hidden' name='???' value='achanger'><dl><dt><label for='message'>Message</label></dt><dd><textarea name='message'></textarea></dd></dl> <input type='submit'></form>";
+            echo $commentaire_wall;            
+            }
+            ?>
+            </div>
             <main>
                 <?php
                 /**

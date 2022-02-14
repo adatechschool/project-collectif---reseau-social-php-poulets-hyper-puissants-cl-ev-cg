@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="fr">
     <head>
@@ -7,7 +8,8 @@
         <link rel="stylesheet" href="style.css"/>
     </head>
     <body>
-        <header>
+    <?php include "header.php"; ?>
+        <!-- <header>
             <img src="resoc.jpg" alt="Logo de notre réseau social"/> 
             <nav id="menu">
                 <a href="news.php">Actualités</a>
@@ -24,7 +26,7 @@
                 </ul>
 
             </nav>
-        </header>
+        </header> -->
         <div id="wrapper">          
             <aside>
                 <img src = "user.jpg" alt = "Portrait de l'utilisatrice"/>
