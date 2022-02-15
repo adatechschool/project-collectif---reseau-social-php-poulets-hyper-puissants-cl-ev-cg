@@ -37,7 +37,7 @@
                 //@todo: afficher le résultat de la ligne ci dessous, remplacer XXX par l'alias et effacer la ligne ci-dessous
                 // echo "<pre>" . print_r($user, 1) . "</pre>";
                 ?>
-                <img src="user.jpg" alt="Portrait de l'utilisatrice"/>
+                <img src="poulet_puissant.png" alt="Portrait de l'utilisatrice"/>
                 <section>
                     <h3>Présentation</h3>
                     <p>Sur cette page vous trouverez tous les message des utilisatrices
@@ -75,29 +75,14 @@
                     echo("Échec de la requete : " . $mysqli->error);
                 }
 
-                while ($post = $lesInformations->fetch_assoc()) {
-                /**
-                 * Etape 4: @todo Parcourir les messsages et remplir correctement le HTML avec les bonnes valeurs php
-                 * A vous de retrouver comment faire la boucle while de parcours...
-                 */
-                ?>                
-                <article>
-                    <h3>
-                        <!-- TODO : mettre en forme la date-->
-                        <time><?php echo $post['created'] ?></time>
-                    </h3>
-                    <address><a href=<?php $userID = $post['user_id']; echo "'wall.php?user_id=$userID'" ?>><?php echo $post['author_name'] ?></a></address>
-                    <div>
-                        <p><?php echo $post['content'] ?></p>
-                    </div>                                            
-                    <footer>
-                        <small>♥ <?php echo $post['like_number'] ?></small>
-                        <a href="">#<?php echo $post['taglist'] ?></a>
-                    </footer>
-                </article>
-                <?php
-                }
-                ?>
+                while ($post = $lesInformations->fetch_assoc())
+                {
+
+                    //  echo "<pre>" . print_r($post, 1) . "</pre>";
+                include "post.php";
+                } ?>
+                
+                
 
 
             </main>

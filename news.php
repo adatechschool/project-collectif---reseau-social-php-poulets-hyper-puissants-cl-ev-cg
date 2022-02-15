@@ -12,7 +12,7 @@
 
         <div id="wrapper">
             <aside>
-                <img src="user.jpg" alt="Portrait de l'utilisatrice"/>
+                <img src="poulet_puissant.png" alt="Portrait de l'utilisatrice"/>
                 <section>
                     <h3>Présentation</h3>
                     <p>Sur cette page vous trouverez les derniers messages de
@@ -96,32 +96,10 @@
                 // NB: à chaque tour du while, la variable post ci dessous reçoit les informations du post suivant.
                 while ($post = $lesInformations->fetch_assoc())
                 {
-                    //la ligne ci-dessous doit etre supprimée mais regardez ce 
-                    //qu'elle affiche avant pour comprendre comment sont organisées les information dans votre 
-                    //echo "<pre>" . print_r($post, 1) . "</pre>";
-                    // @todo : Votre mission c'est de remplacer les AREMPLACER par les bonnes valeurs
-                    // ci-dessous par les bonnes valeurs cachées dans la variable $post 
-                    // on vous met le pied à l'étrier avec created
-                    // 
-                    // avec le ? > ci-dessous on sort du mode php et on écrit du html comme on veut... mais en restant dans la boucle
-                    ?>
-                    <article>
-                        <h3>
-                            <time><?php echo $post['created'] ?></time>
-                        </h3>
-                        <address><a href=<?php $userID = $post['user_id']; echo "'wall.php?user_id=$userID'" ?> ><?php echo $post['author_name'] ?></a></address>
-                        <div>
-                            <p><?php echo $post['content'] ?></p>
-                        </div>
-                        <footer>
-                            <small>♥ <?php echo $post['like_number'] ?></small>
-                            <a href=""># <?php echo $post['taglist'] ?></a>,
-                        </footer>
-                    </article>
-                    <?php
-                    // avec le <?php ci-dessus on retourne en mode php 
-                }// cette accolade ferme et termine la boucle while ouverte avant.
-                ?>
+
+                    //  echo "<pre>" . print_r($post, 1) . "</pre>";
+                include "post.php";
+                } ?>
 
             </main>
         </div>

@@ -1,13 +1,21 @@
 body{
-    background-color: rgb(85, 13, 13);
+    background-color: rgb(168, 36, 39);
+
     font-family: Arial;
+}
+
+#wrapper {
+    background-image: url(Poulet_musclé.png);
+    background-size: 60%;
+    background-position: center;
+    background-repeat: repeat-x;
 }
 
 a{text-decoration: none; color:rgb(0, 0, 0);}
 a:hover{text-decoration: underline;}
 
 body>header{
-    background-color: rgb(248, 248, 248);
+    background-color: rgb(255, 255, 255);
     display:flex;
     width:80em;
     margin:0 auto 2em auto;    
@@ -15,7 +23,7 @@ body>header{
 
 }
 body>header img{
-    height:5em;
+    width: 120px;
 }
 body>header #menu {
     display:flex;
@@ -31,7 +39,7 @@ body>header #menu a{
 }
 body>header a:hover
 {
-    background-color: #99b;
+    background-color: rgb(168, 36, 39);
 }
 body>header ul{list-style: none;}
 body>header #user
@@ -52,7 +60,7 @@ body>header #user ul{
     padding:0;
     margin:0;
     margin-left:-5em;
-    background-color: #fff;
+    background-color: rgb(255, 255, 255);
     border: 1px solid #99b;
 
     z-index: 1;
@@ -158,3 +166,8 @@ pre{
 form dl dt{float:left;font-weight: bold;line-height: 1.5em;}
 form dl dd{margin-left:10em;line-height: 1.5em;margin-bottom: 1em}
 form dl dd textarea{width:40em;height: 15em;}
+
+#poulet{
+    width: 50px;
+    height: 50px;
+}

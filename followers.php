@@ -29,7 +29,7 @@
         </header> -->
         <div id="wrapper">          
             <aside>
-                <img src = "user.jpg" alt = "Portrait de l'utilisatrice"/>
+                <img src = "poulet_puissant.png" alt = "Portrait de l'utilisatrice"/>
                 <section>
                     <h3>Présentation</h3>
                     <p>Sur cette page vous trouverez la liste des personnes qui
@@ -60,7 +60,7 @@
                     //echo "<pre>" . print_r($user, 1) . "</pre>";
                     ?>
                 <article>
-                    <img src="user.jpg" alt="blason"/>
+                    <img src="poulet_puissant.png" alt="blason"/>
                     <h3><a href=<?php $userID = $user['id']; echo "'wall.php?user_id=$userID'" ?>><?php echo $user['alias'] ?></a></h3>
                     <p>id:<?php echo $user['id'] ?></p>
                 </article>

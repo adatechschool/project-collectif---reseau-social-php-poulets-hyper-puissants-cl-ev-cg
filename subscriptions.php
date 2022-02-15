@@ -13,7 +13,7 @@
 
         <div id="wrapper">
             <aside>
-                <img src="user.jpg" alt="Portrait de l'utilisatrice"/>
+                <img src="poulet_puissant.png" alt="Portrait de l'utilisatrice"/>
                 <section>
                     <h3>Présentation</h3>
                     <p>Sur cette page vous trouverez la liste des personnes dont
@@ -45,7 +45,7 @@
                  //echo "<pre>" . print_r($post, 1) . "</pre>"; 
                 ?>
                 <article>
-                    <img src="user.jpg" alt="blason"/>
+                    <img src="poulet_puissant.png" alt="blason"/>
                     <h3><?php echo $post['alias'] ?></h3>
                     <p>id :<?php echo $post['id'] ?></p>                    
                 </article>

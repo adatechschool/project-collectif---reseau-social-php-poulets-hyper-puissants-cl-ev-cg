@@ -35,7 +35,7 @@
                 //@todo: afficher le résultat de la ligne ci dessous, remplacer XXX par le label et effacer la ligne ci-dessous
                 //echo "<pre>" . print_r($tag, 1) . "</pre>";
                 ?>
-                <img src="user.jpg" alt="Portrait de l'utilisatrice"/>
+                <img src="poulet_puissant.png" alt="Portrait de l'utilisatrice"/>
                 <section>
                     <h3>Présentation</h3>
                     <p>Sur cette page vous trouverez les derniers messages comportant
@@ -79,22 +79,9 @@
                 while ($post = $lesInformations->fetch_assoc())
                 {
 
-/*                     echo "<pre>" . print_r($post, 1) . "</pre>";
- */                    ?>                
-                    <article>
-                        <h3>
-<!--                             TODO : mise en forme de la date
- -->                            <time datetime= <?php $time=$post['created']; echo("'$time'") ?> ><?php echo $time ?></time>
-                        </h3>
-                        <address>par <a href=<?php $userID = $post['user_id']; echo "'wall.php?user_id=$userID'" ?>><?php echo $post['author_name']?></a></address>
-                        <div>
-                            <p><?php echo $post['content']?></p>
-                        </div>                                            
-                        <footer>
-                            <small>♥ <?php echo $post['like_number']?></small>
-                            <a href="">#<?php echo $post['taglist']?></a>                        </footer>
-                    </article>
-                <?php } ?>
+                    //  echo "<pre>" . print_r($post, 1) . "</pre>";
+                include "post.php";
+                } ?>
 
 
             </main>

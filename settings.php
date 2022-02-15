@@ -15,7 +15,7 @@
 
 
             <aside>
-                <img src="user.jpg" alt="Portrait de l'utilisatrice"/>
+                <img src="poulet_puissant.png" alt="Portrait de l'utilisatrice"/>
                 <section>
                     <h3>Présentation</h3>
                     <p>Sur cette page vous trouverez les informations de l'utilisatrice
@@ -70,11 +70,11 @@
                         <dd><a href=<?php $userID = $user['id']; echo "'wall.php?user_id=$userID'" ?>><?php echo($user['alias']) ?></a></dd>
                         <dt>Email</dt>
                         <dd><?php echo($user['email']) ?></dd>
-                        <dt>Nombre de message</dt>
+                        <dt>Nombre de messages</dt>
                         <dd><?php echo($user['totalpost']) ?> </dd>
-                        <dt>Nombre de "J'aime" donnés </dt>
+                        <dt>Nombre de 💪  donnés </dt>
                         <dd><?php echo($user['totalgiven']) ?></dd>
-                        <dt>Nombre de "J'aime" reçus</dt>
+                        <dt>Nombre de 💪 reçus</dt>
                         <dd><?php echo($user['totalrecieved']) ?></dd>
                     </dl>
 
