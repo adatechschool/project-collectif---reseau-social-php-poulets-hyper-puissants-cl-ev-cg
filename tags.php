@@ -55,7 +55,8 @@
                     posts.created,
                     posts.user_id,
                     users.alias as author_name,  
-                    count(likes.id) as like_number,  
+                    count(likes.id) as like_number,
+                    posts.id as post_id,  
                     GROUP_CONCAT(DISTINCT tags.label) AS taglist 
                     FROM posts_tags as filter 
                     JOIN posts ON posts.id=filter.post_id
@@ -78,8 +79,6 @@
                  */
                 while ($post = $lesInformations->fetch_assoc())
                 {
-
-                    //  echo "<pre>" . print_r($post, 1) . "</pre>";
                 include "post.php";
                 } ?>
 

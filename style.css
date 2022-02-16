@@ -1,12 +1,11 @@
 body{
     background-color: rgb(168, 36, 39);
-
     font-family: Arial;
 }
 
 #wrapper {
     background-image: url(Poulet_musclé.png);
-    background-size: 60%;
+    background-size: contain;
     background-position: center;
     background-repeat: repeat-x;
 }
@@ -79,7 +78,7 @@ body>header #user:hover ul{
 #wrapper{
     display:flex;    
     width:80em;
-    margin:0 auto 2em auto;
+    margin:0 auto 0 auto;
 }
 #wrapper aside{
     background-color: #fff;
@@ -96,7 +95,7 @@ body>header #user:hover ul{
 #wrapper main{
     flex:3;
     padding-left:1em;
-    height: 80vh;
+    height: 85vh;
     overflow-y:  scroll;
 }
 #wrapper main article{
