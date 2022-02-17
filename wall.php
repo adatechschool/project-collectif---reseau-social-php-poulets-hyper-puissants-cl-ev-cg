@@ -44,14 +44,16 @@
                     </p>
                 </section>
             </aside>
-            <div> 
+            
+            <main>
+            <article id="new-post"> 
             <?php 
             if ($userId == $connected_id) {
                 $commentaire_wall = <<<END
                 <form action='wall.php' method='post'>
                 <input type='hidden' name='???' value='achanger'>
-                <dl><dt><label for='content'>Message</label></dt><dd>
-                <input type='textarea' name='content'></dd></dl>
+                <label for='content'>Message</label>
+                <textarea name='content'></textarea>
                 <input type='submit'>
                 </form>
                 END;
@@ -130,8 +132,7 @@
                     } 
 
             ?>
-            </div>
-            <main>
+            </article>
                 <?php
                 /**
                  * Etape 3: récupérer tous les messages de l'utilisatrice

@@ -1,6 +1,6 @@
 body{
     background-color: rgb(168, 36, 39);
-    font-family: Arial;
+    font-family: roboto, sans-serif;
 }
 
 #wrapper {
@@ -31,10 +31,10 @@ body>header #menu {
     border-left: 1px solid #99b;
 }
 body>header #menu a{
-    flex:1;
+    flex:1;    
     text-align: center;
-    padding-top:2em;
     border-right: 1px solid #99b;
+    padding-top: 3em;
 }
 body>header a:hover
 {
@@ -97,7 +97,39 @@ body>header #user:hover ul{
     padding-left:1em;
     height: 85vh;
     overflow-y:  scroll;
+    display:flex;
+    flex-direction: column;
 }
+
+#wrapper main #new-post {
+    width: fit-content;
+    align-self: center;
+    background: rgba(0,0,0,0);
+}
+
+#new-post form {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+textarea {
+    width: 500px;
+    height: 100px;
+}
+
+#new-post label {
+    align-self: start;
+    color: white;
+}
+
+#new-post [type="submit"] {
+    align-self: end;
+}
+
+
+
 #wrapper main article{
     background-color: #fff;
     padding:1em;
