@@ -39,13 +39,12 @@ if ($enCoursDeLike){
                             <p>{$post['content']}</p>
                         </div>                                            
                         <footer>
-                        <small> 💪 {$post['like_number']}</small>
+                        <small> <span onclick="document.querySelector('#form-{$post['post_id']}').submit()"> 💪 </span> &nbsp; {$post['like_number']}</small>
                             <a href="">#{$post['taglist']}</a>
                         </footer>
-                        <form action="wall.php?user_id={$_SESSION['connected_id']}" method="post">
+                        <form action="wall.php?user_id={$_SESSION['connected_id']}" method="post" id="form-{$post['post_id']}">
                             <input type='hidden' name='liked' value='true'>
                             <input type='hidden' name='post_id' value="{$post['post_id']}">
-                            <input type='submit' value='more muscle'>
                         </form>
                     </article>
                     END;

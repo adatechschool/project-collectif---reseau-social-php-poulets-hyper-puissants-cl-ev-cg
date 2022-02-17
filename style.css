@@ -22,7 +22,8 @@ body>header{
 
 }
 body>header img{
-    width: 120px;
+    height: 110px;
+    padding: 10px;
 }
 body>header #menu {
     display:flex;
@@ -38,7 +39,8 @@ body>header #menu a{
 }
 body>header a:hover
 {
-    background-color: rgb(168, 36, 39);
+    text-decoration: none;
+    background-color: rgba(168, 36, 39,0.5);
 }
 body>header ul{list-style: none;}
 body>header #user
@@ -50,7 +52,7 @@ body>header #user
 body>header #user>a{
     display:block;
     text-align: center;
-    padding:2em 0;
+    padding:3em 0;
     width:100%;
 }
 body>header #user ul{ 
@@ -75,6 +77,8 @@ body>header #user:hover ul{
 }
 
 
+
+
 #wrapper{
     display:flex;    
     width:80em;
@@ -88,8 +92,9 @@ body>header #user:hover ul{
 }
 #wrapper aside img{
     display: block;
-    width:50%;
+    width:60%;
     margin:auto;
+    border-radius:50%;
 }
 
 #wrapper main{
@@ -104,7 +109,9 @@ body>header #user:hover ul{
 #wrapper main #new-post {
     width: fit-content;
     align-self: center;
-    background: rgba(0,0,0,0);
+    background: rgba(0,0,0,0.5);
+    background-image: url(Poulet_musclé.png);
+    background-size: contain;
 }
 
 #new-post form {
@@ -117,18 +124,31 @@ body>header #user:hover ul{
 textarea {
     width: 500px;
     height: 100px;
+    background-color: rgba(255,255,255,0.6);
+}
+
+textarea:focus {
+    background-color: rgba(255,255,255,0.9);
+
 }
 
 #new-post label {
     align-self: start;
-    color: white;
+    color: beige;
 }
 
 #new-post [type="submit"] {
     align-self: end;
 }
 
+small span {
+    cursor: pointer;
+    text-shadow: 1px 1px 3px red;
+}
 
+small span:hover {
+    text-shadow: 2px 2px 3px red;
+}
 
 #wrapper main article{
     background-color: #fff;
@@ -188,6 +208,7 @@ textarea {
 .contacts article img{
     float:right;
     height: 5em;
+    border-radius: 50%;
 }
 
 pre{
