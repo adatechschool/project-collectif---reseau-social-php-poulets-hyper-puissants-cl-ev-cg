@@ -37,7 +37,7 @@
                 //@todo: afficher le résultat de la ligne ci dessous, remplacer XXX par l'alias et effacer la ligne ci-dessous
                 /* echo "<pre>" . print_r($user, 1) . "</pre>"; */
                 ?>
-                <img src="poulet_puissant.png" alt="Portrait de l'utilisatrice"/>
+                <img src="poulet_badass.jpg" alt="Portrait de l'utilisatrice"/>
                 <section>
                     <h3>Présentation</h3>
                     <p>Sur cette page vous trouverez tous les messages de l'utilisatrice : <?php echo $user['alias'] ?>
@@ -50,11 +50,11 @@
             <?php 
             if ($userId == $connected_id) {
                 $commentaire_wall = <<<END
-                <form action='wall.php' method='post'>
+                <form action='wall.php?user_id={$_SESSION['connected_id']}' method='post'>
                 <input type='hidden' name='???' value='achanger'>
-                <label for='content'>Message</label>
-                <textarea name='content'></textarea>
-                <input type='submit'>
+                <label for='content'>Mon message</label>
+                <textarea name='content' placeholder='Ecrire un message' ></textarea>
+                <input type='submit' value='Envoyer'>
                 </form>
                 END;
             echo $commentaire_wall;            
@@ -75,7 +75,7 @@
             $enCoursDeTraitement2 = isset($_POST['subscription']);
                     if ($enCoursDeTraitement2)
                     {
-                        echo "<pre>" . print_r($_POST, 1) . "</pre>", "turtle";
+                        //echo "<pre>" . print_r($_POST, 1) . "</pre>", "turtle";
                         $followed_id = intval($mysqli->real_escape_string($_POST['user_id']));
                         $follower_id = $mysqli->real_escape_string($connected_id);
                         $lInstructionSql2 = "INSERT INTO followers"
@@ -119,7 +119,6 @@
                                 . "NOW(), "
                                 . "NULL);"
                                 ;
-                        echo $lInstructionSql;
                         // Etape 5 : execution
                         $ok = $mysqli->query($lInstructionSql);
                         if ( ! $ok)
@@ -127,7 +126,7 @@
                             echo "Impossible d'ajouter le message: " . $mysqli->error;
                         } else
                         {
-                            echo "Message posté en tant que :" . $listAuteurs[$authorId];
+                            //echo "Message posté en tant que :" . $listAuteurs[$authorId];
                         } 
                     } 
 
@@ -156,7 +155,7 @@
                 }
 
                 /**
-                 * Etape 4: @todo Parcourir les messsages et remplir correctement le HTML avec les bonnes valeurs php
+                 * Etape 4: @todo Parcourir les messages et remplir correctement le HTML avec les bonnes valeurs php
                  */
                 while ($post = $lesInformations->fetch_assoc())
                 {

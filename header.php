@@ -2,7 +2,7 @@
     $connected_id = $_SESSION['connected_id'];
     $header = <<< END
     <header>
-            <img src="poulet_badass.jpg" alt="Logo de notre réseau social"/>
+            <img src="poulet_puissant.png" alt="Logo de notre réseau social"/>
             <nav id="menu">
                 <a href="news.php">Actualités</a>
                 <a href="wall.php?user_id=$connected_id">Mur</a>

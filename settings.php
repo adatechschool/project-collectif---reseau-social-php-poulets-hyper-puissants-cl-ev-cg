@@ -15,7 +15,7 @@
 
 
             <aside>
-                <img src="poulet_puissant.png" alt="Portrait de l'utilisatrice"/>
+                <img src="poulet_badass.jpg" alt="Portrait de l'utilisatrice"/>
                 <section>
                     <h3>Présentation</h3>
                     <p>Sur cette page vous trouverez les informations de l'utilisatrice

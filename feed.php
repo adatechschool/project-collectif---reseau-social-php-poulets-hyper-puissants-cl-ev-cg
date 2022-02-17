@@ -37,7 +37,7 @@
                 //@todo: afficher le résultat de la ligne ci dessous, remplacer XXX par l'alias et effacer la ligne ci-dessous
                 // echo "<pre>" . print_r($user, 1) . "</pre>";
                 ?>
-                <img src="poulet_puissant.png" alt="Portrait de l'utilisatrice"/>
+                <img src="poulet_badass.jpg" alt="Portrait de l'utilisatrice"/>
                 <section>
                     <h3>Présentation</h3>
                     <p>Sur cette page vous trouverez tous les message des utilisatrices
